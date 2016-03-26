@@ -1,6 +1,6 @@
 app.controller('MainController', ['$scope', function($scope) { 
-  $scope.title = 'This string is my own'; 
-  $scope.promo = 'This is the promo string';
+  $scope.title = 'This is the subtitle'; 
+  $scope.promo = 'This is another subtitle';
   $scope.products = [ 
   { 
     name: 'The Book of Trees', 
