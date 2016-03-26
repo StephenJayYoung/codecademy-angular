@@ -1,0 +1,299 @@
+
+Learn AngularJS
+Connected to Codecademy
+
+index.html
+MainController.js
+
+app.controller('MainController', ['$scope', function($scope) { 
+  $scope.title = 'This string is my own'; 
+  $scope.promo = 'This is the promo string';
+  $scope.products = [ 
+  { 
+    name: 'The Book of Trees', 
+    price: 19, 
+    pubdate: new Date('2014', '03', '08'), 
+    cover: 'img/the-book-of-trees.jpg',
+    likes: 0
+  }, 
+  { 
+    name: 'Program or be Programmed', 
+    price: 8, 
+    pubdate: new Date('2013', '08', '01'), 
+    cover: 'img/program-or-be-programmed.jpg',
+    likes: 0
+  }, 
+      { 
+    name: 'The Book ', 
+    price: 19, 
+    pubdate: new Date('2014', '03', '08'), 
+    cover: 'img/the-book-of-trees.jpg',
+    likes: 0
+  }, 
+  { 
+    name: 'Program', 
+    price: 8, 
+    pubdate: new Date('2013', '08', '01'), 
+    cover: 'img/program-or-be-programmed.jpg',
+    likes: 0
+  }
+],
+  $scope.plusOne = function(index) { 
+  $scope.products[index].likes += 1; 
+};
+}]);
+1
+app.controller('MainController', ['$scope', function($scope) { 
+2
+  $scope.title = 'This string is my own'; 
+3
+  $scope.promo = 'This is the promo string';
+4
+  $scope.products = [ 
+5
+  { 
+6
+    name: 'The Book of Trees', 
+7
+    price: 19, 
+8
+    pubdate: new Date('2014', '03', '08'), 
+9
+    cover: 'img/the-book-of-trees.jpg',
+10
+    likes: 0
+11
+  }, 
+12
+  { 
+13
+    name: 'Program or be Programmed', 
+14
+    price: 8, 
+15
+    pubdate: new Date('2013', '08', '01'), 
+16
+    cover: 'img/program-or-be-programmed.jpg',
+17
+    likes: 0
+18
+  }, 
+19
+      { 
+20
+    name: 'The Book ', 
+21
+    price: 19, 
+22
+    pubdate: new Date('2014', '03', '08'), 
+23
+    cover: 'img/the-book-of-trees.jpg',
+24
+    likes: 0
+25
+  }, 
+26
+  { 
+27
+    name: 'Program', 
+28
+    price: 8, 
+29
+    pubdate: new Date('2013', '08', '01'), 
+30
+    cover: 'img/program-or-be-programmed.jpg',
+31
+    likes: 0
+32
+  }
+33
+],
+Run
+
+https://localhost/
+
+Learn
+Great! Each time you click on the number of likes, the number goes up. How does it work?
+
+The ng-click is a directive. When <p class="likes"> is clicked, ng-click tells AngularJS to run the plusOne() function in the controller.
+The plusOne() function gets the index of the product that was clicked, and then adds one to that product's likes property.
+Notice that the plusOne() doesn't interact with the view at all; it just updates the controller. Any change made to the controller shows up in the view.
+Instructions
+1.
+In the controller in the $scope.products array, add a new property named dislikes to each element. Set dislikes to 0.
+2.
+In the view under <p class="likes">, add an element for <p class="dislikes">. Then display a product's dislikes using an expression.
+3.
+Back in the controller after $scope.products, attach a new property to $scope named minusOne. Set it equal to a function that adds one to a product's dislikes property. Adapt the code from the plusOne() function to do this.
+4.
+In the view, use ng-click to trigger the minusOne() function when <p class="dislikes"> is clicked.
+
+View the AngularJS app in the browser. Click on the -0 in each product tile.
+Report a Bug
+If you see a bug or any other issue with this page, please report it here.
+Report a Bug
+10. ng-click II
+Back
+10/11
+Next
+Get Help
+
+css
+
+main.css
+
+img
+
+program-or-be-programmed.jpg
+
+the-book-of-trees.jpg
+
+js
+
+controllers
+
+MainController.js
+
+shared
+
+angular-mocks.js
+
+angular-route.min.js
+
+angular.min.js
+
+app.js
+
+index.html
+html, body {
+ margin: 0;
+ padding: 0;
+ font-family: 'Roboto', sans-serif;
+ width:100%;
+}
+
+.header {
+ padding: 15px;
+}
+
+.header img {
+   display: inline-block;
+}
+
+.header h1 {
+   display: inline-block;
+}
+
+.main {
+ background-color: #f2f2f2 ;
+ padding: 40px 0;
+}
+
+.main h1 {
+ color: #F65A5B ;
+ font-size: 64px;
+ margin: 0 0 80px 0;
+ padding: 20px 0;
+   line-height: 60px;
+   width: 50%;
+}
+
+.main h2 {
+ background-color: #DDDDDD ;
+ color: #999999 ;
+ font-size: 20px;
+ margin: 0 0 40px 0;
+ padding: 20px 0;
+}
+
+.thumbnail {
+ border: 0px;
+ position: relative;
+ padding: 50px;
+   border-radius: 0;
+   margin-bottom:50px;
+}
+
+.thumbnail img {
+   margin-top: 10px;
+ margin-bottom: 30px;
+ max-width: 100%;
+}
+
+.title,
+.date {
+ color: #444;
+ margin: 0;
+ font-size: 18px;
+   font-weight: 800;
+}
+
+.date {
+   color: #a3a3a3 ;
+   font-size: 14px;
+   font-weight: 200;
+}
+
+.price {
+ background-color: #39D1B4 ;
+ color: #fff;
+ font-size: 18px;
+   border-radius: 50%;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+   font-weight: 200;
+   height: 80px;
+   line-height: 80px;
+   text-align: center;
+   width: 80px;
+ position: absolute;
+ top: -40px;
+ right: 20px;
+}
+
+.rating {
+ text-align: right;
+ -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+ margin: 30px 0 -30px 20px;
+}
+
+.likes,
+.dislikes {
+   background: #F65A5B ;
+ color: #fff;
+ cursor: pointer;
+ display: inline-block;
+ font-size: 15px;
+   line-height: 40px;
+   min-width: 40px;
+   height: 40px;
+   border-radius: 50%;
+ margin: 0 -30px 0 40px;
+   text-align: center;
+   font-weight: 200;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+   transition: background 500ms;
+}
+
+.likes:hover,
+.dislikes:hover {
+ color: #F65A5B ;
+   background: rgba(246, 90, 91, 0.25);
+   transition: background 500ms;
+}
+
+.footer {
+ text-align: center;
+ margin: 80px 0 110px;
+}
+
+.footer h2 {
+ font-size: 24px;
+ margin-bottom: 25px;
+}
+
+.footer img {
+   margin: 0 10px;
+}
+Open
